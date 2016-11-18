@@ -1,8 +1,8 @@
 describe 'Test program output' do
   it 'it should print an error if no command line argument is provided' do
     setup_aruba
-    directory = ENV['FULL_PATH_TO_PROGRAM']
-    run "ruby #{directory}/book_a_doc.rb"
+    program_path = ENV['FULL_PATH_TO_PROGRAM']
+    run "ruby #{program_path}"
 
     stop_all_commands
     sleep(1)

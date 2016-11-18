@@ -17,7 +17,7 @@ describe 'Test program output' do
 
     stop_all_commands
     sleep(1)
-    text = "Please use correct time format, e.g, 12:40 or 2.30\n"
-    expect(last_command_started.output).to eq(text)
+    text2 = "Please use correct time format, e.g, 12:40 or 2.30\n"
+    expect(last_command_started.output).to eq(text2)
   end
 end

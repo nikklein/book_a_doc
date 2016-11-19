@@ -18,7 +18,7 @@ describe 'Test program output' do
 
     stop_all_commands
     sleep(1)
-    text2 = "Please use correct time format, e.g, 09:30 or 14:30\n"
+    text2 = "Please use 24H time format, e.g, 09:30 or 14:30\n"
     expect(last_command_started.output).to eq(text2)
   end
   it 'it prints an error if preffered time is not between 08:00 and 15:00' do

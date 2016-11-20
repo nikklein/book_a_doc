@@ -10,7 +10,7 @@ def run_program(time, path)
   validator.validate_input
   file_processor = FileProcessor.new(path)
   booking = Booking.new(file_processor, time)
-  booking.book_a_time
+  booking.book_a_doc
 end
 
 run_program(time, path)

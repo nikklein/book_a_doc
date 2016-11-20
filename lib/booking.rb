@@ -1,23 +1,34 @@
 class Booking
   def initialize(file_processor, time)
-    @time = time
+    @time = format_time(time)
     @file_processor = file_processor
   end
 
   def book_a_doc
     available_slots = @file_processor.to_hash
     slots = available_slots['availability_slots']
-    puts 'No time avaialble' if slots.empty?
+    puts 'No times are available' if slots.empty?
 
-    select_time = slots.index slots.detect { |el| el['time'] == @time }
-    if select_time.nil?
+    find_time = slots.index slots.detect { |el| el['time'] == @time }
+
+    if find_time.nil?
       index = find_next_slot_index(slots)
-      puts format_for_print(slice_a_slot(slots, index).first['time'])
+      slice = slots.slice!(index, 1)
       update_file(available_slots)
-
+      puts format_for_print(slice['time'])
     else
-      print_time(slots, select_time)
+      puts format_for_print(slots[find_time]['time'])
+      slots.slice!(find_time, 1)
       update_file(available_slots)
+    end
+  end
+
+  private
+
+  def check_next_index(time_slots)
+    if time_slots.last == @time
+      puts 'No times are currently available'
+      exit
     end
   end
 
@@ -26,23 +37,8 @@ class Booking
     slots.each { |el| time_slots << el['time'] }
     time_slots << @time
     sorted = time_slots.sort
-    index = sorted.index @time
-    if sorted[index + 1].nil?
-      puts "Last avaialble time #{format_for_print(sorted[index - 1])}"
-      exit
-    else
-      index
-    end
-  end
-
-  private
-
-  def print_time
-    puts format_for_print(slice_a_slot(slots, select_time)).first['time']
-  end
-
-  def slice_a_slot(slots, index)
-    slots.slice!(index, 1)
+    check_next_index(time_slots)
+    sorted.index @time
   end
 
   def update_file(available_slots)

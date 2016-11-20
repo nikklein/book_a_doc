@@ -14,7 +14,7 @@ class FileProcessor
   end
 
   def write_to_file(dataset)
-    File.open(@path, 'w') { |file| file.write(dataset) }
+    File.open(@path, 'w') { |file| file.write(pretty_generate(dataset)) }
   end
 
   private

@@ -18,8 +18,8 @@ describe 'Test program output' do
 
     stop_all_commands
     sleep(1)
-    text2 = "Please use 24H time format, e.g, 09:30 or 14:30\n"
-    expect(last_command_started.output).to eq(text2)
+    text = "Please use 24H time format, e.g, 09:30 or 14:30\n"
+    expect(last_command_started.output).to eq(text)
   end
   it 'it prints an error if preffered time is not between 08:00 and 15:00' do
     setup_aruba
@@ -28,7 +28,17 @@ describe 'Test program output' do
 
     stop_all_commands
     sleep(1)
-    text2 = "Appointments are avaialble between 08:00 and 15:00\n"
-    expect(last_command_started.output).to eq(text2)
+    text = "Appointments are avaialble between 08:00 and 15:00\n"
+    expect(last_command_started.output).to eq(text)
+  end
+  it 'it prints a booking time ' do
+    setup_aruba
+    program_path = ENV['FULL_PATH_TO_PROGRAM']
+    run "ruby #{program_path} 08:00"
+
+    stop_all_commands
+    sleep(1)
+    text = '08:30'
+    expect(last_command_started.output).to eq(text)
   end
 end

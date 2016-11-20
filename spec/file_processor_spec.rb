@@ -36,10 +36,10 @@ describe FileProcessor do
           "time":"08:00:00",
           "slot_size":10,
           "doctor_id":1
-        }.to_json
-
+        }
+        pretty_generated = JSON.pretty_generate(dataset)
         processor.write_to_file(dataset)
-        expect(processor.load_file).to eq(dataset)
+        expect(processor.load_file).to eq(pretty_generated)
       end
     end
   end

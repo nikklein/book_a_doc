@@ -1,6 +1,7 @@
+require 'pp'
 require 'dotenv'
 Dotenv.load
-require 'pp'
+require 'fakefs/safe'
 require 'fakefs/spec_helpers'
 require 'rspec/json_expectations'
 require 'aruba'

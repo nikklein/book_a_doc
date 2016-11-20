@@ -1,3 +1,4 @@
+require './lib/file_processor'
 require './lib/booking'
 require 'fakefs/safe'
 
@@ -12,10 +13,10 @@ describe Booking do
     describe '#book_a_doc' do
       it 'allows to book a time' do
         FakeFS::FileSystem.clone(config)
-        time = '08:30'
+        time = '08:00'
         file_processor = FileProcessor.new(path_to_file)
         booking = Booking.new(file_processor, time)
-        expect { booking.book_a_doc }.to output("08:30\n").to_stdout
+        expect { booking.book_a_doc }.to output("08:00\n").to_stdout
       end
     end
   end

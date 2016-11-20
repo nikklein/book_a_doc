@@ -3,7 +3,7 @@ class Validations
     @time = time
   end
 
-  def check_errors
+  def validate_input
     abort("In order to book an appointment please specify the time.\n") if @time.nil?
     abort("Please use 24H time format, e.g, 09:30 or 14:30\n") unless @time =~ time_format
     abort("Appointments are avaialble between 08:00 and 15:00\n") unless time_in_range?

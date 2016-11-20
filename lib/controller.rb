@@ -4,7 +4,7 @@ time = ARGV.first
 
 def run_program(time)
   validator = Validations.new(time)
-  validator.check_errors
+  validator.validate_input
 end
 
 run_program(time)

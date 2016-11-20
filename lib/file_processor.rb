@@ -6,7 +6,10 @@ class FileProcessor
   end
 
   def to_hash
-    file = File.read(@path)
-    JSON.parse(file)
+    JSON.parse(load_file)
+  end
+
+  def load_file
+    File.read(@path)
   end
 end

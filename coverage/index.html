@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-20T15:25:25+00:00">2016-11-20T15:25:25+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-20T15:27:05+00:00">2016-11-20T15:27:05+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.14%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.19
+         1.23
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>3</b> files in total.
-    <b>35</b> relevant lines. 
-    <span class="green"><b>34</b> lines covered</span> and
-    <span class="red"><b>1</b> lines missed </span>
+    <b>37</b> relevant lines. 
+    <span class="green"><b>37</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -53,20 +53,20 @@
       <tr>
         <td class="strong"><a href="#44edd46536eedac14c4bc2c1633487af8ee8f11c" class="src_link" title="lib/file_processor.rb">lib/file_processor.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>15</td>
-        <td>8</td>
-        <td>8</td>
+        <td>19</td>
+        <td>10</td>
+        <td>10</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#14e7a27b733bdea958616cf5b9e6b22a15594b6b" class="src_link" title="spec/file_processor_spec.rb">spec/file_processor_spec.rb</a></td>
-        <td class="green strong">96.15 %</td>
+        <td class="green strong">100.0 %</td>
         <td>46</td>
         <td>26</td>
-        <td>25</td>
-        <td>1</td>
+        <td>26</td>
+        <td>0</td>
         <td>1.1</td>
       </tr>
       
@@ -101,8 +101,8 @@
     <h3>lib/file_processor.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>8</b> relevant lines. 
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>10</b> relevant lines. 
+      <span class="green"><b>10</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -182,8 +182,8 @@
           <code class="ruby">  def load_file</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
           
           <code class="ruby">    File.read(@path)</code>
         </li>
@@ -197,6 +197,30 @@
         <li class="never" data-hits="" data-linenumber="15">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def write_to_file(dataset)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="17">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    File.open(@path, &#39;w&#39;) { |file| file.write(dataset) }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
           <code class="ruby">end</code>
         </li>
       
@@ -207,11 +231,11 @@
         <div class="source_table" id="14e7a27b733bdea958616cf5b9e6b22a15594b6b">
   <div class="header">
     <h3>spec/file_processor_spec.rb</h3>
-    <h4><span class="green">96.15 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>26</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
-      <span class="red"><b>1</b> lines missed.</span>
+      <span class="green"><b>26</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -464,8 +488,8 @@
           <code class="ruby">        processor.write_to_file(dataset)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
-          
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
           <code class="ruby">        expect(processor.load_file).to eq(dataset)</code>
         </li>

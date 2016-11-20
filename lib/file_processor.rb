@@ -12,4 +12,8 @@ class FileProcessor
   def load_file
     File.read(@path)
   end
+
+  def write_to_file(dataset)
+    File.open(@path, 'w') { |file| file.write(dataset) }
+  end
 end

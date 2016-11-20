@@ -1,3 +1,2 @@
 .env
-/coverage/resultset.json
-/coverage/index.html
+/coverage

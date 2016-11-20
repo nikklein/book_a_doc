@@ -4,51 +4,45 @@
       "/Users/NNS/Dropbox/Projects/book_a_doc/spec/support/aruba.rb": [
         1
       ],
-      "/Users/NNS/Dropbox/Projects/book_a_doc/spec/features/program_feature_spec.rb": [
-        1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
+      "/Users/NNS/Dropbox/Projects/book_a_doc/spec/file_processor_spec.rb": [
         1,
         1,
         1,
         null,
         1,
         1,
+        null,
         1,
         1,
         null,
         1,
-        1,
-        1,
-        1,
+        null,
+        2,
+        null,
         null,
         1,
         1,
         1,
-        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null,
         null
       ],
-      "/Users/NNS/Dropbox/Projects/book_a_doc/spec/validations_spec.rb": [
-        null,
-        null,
-        null,
-        null,
+      "/Users/NNS/Dropbox/Projects/book_a_doc/lib/file_processor.rb": [
+        1,
+        1,
+        1,
         null,
         null
       ]
     },
-    "timestamp": 1479575498
+    "timestamp": 1479638761
   }
 }

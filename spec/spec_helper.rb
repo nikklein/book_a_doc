@@ -8,7 +8,6 @@ require 'simplecov'
 SimpleCov.start
 
 RSpec.configure do |config|
-  config.include FakeFS::SpecHelpers, fakefs: true
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
@@ -33,6 +32,8 @@ RSpec.configure do |config|
   end
 
   config.include Aruba::Api
+
+  config.include FakeFS::SpecHelpers, fakefs: true
 
   # This option will default to `:apply_to_host_groups` in RSpec 4 (and will
   # have no way to turn it off -- the option exists only for backwards

@@ -5,12 +5,12 @@ class FileProcessor
     @path = path
   end
 
-  def to_hash
-    JSON.parse(load_file)
-  end
-
   def load_file
     File.read(@path)
+  end
+
+  def to_hash
+    JSON.parse(load_file)
   end
 
   def write_to_file(dataset)

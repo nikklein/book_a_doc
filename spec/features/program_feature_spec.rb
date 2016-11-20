@@ -1,3 +1,5 @@
+require 'fakefs'
+
 describe 'Test program output' do
   it 'it prints an error if no command line argument has been provided' do
     setup_aruba
@@ -29,16 +31,6 @@ describe 'Test program output' do
     stop_all_commands
     sleep(1)
     text = "Appointments are avaialble between 08:00 and 15:00\n"
-    expect(last_command_started.output).to eq(text)
-  end
-  it 'it prints a booking time ' do
-    setup_aruba
-    program_path = ENV['FULL_PATH_TO_PROGRAM']
-    run "ruby #{program_path} 08:00"
-
-    stop_all_commands
-    sleep(1)
-    text = '08:30'
     expect(last_command_started.output).to eq(text)
   end
 end

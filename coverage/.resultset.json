@@ -54,6 +54,7 @@
         0,
         0,
         0,
+        null,
         0,
         null,
         2,
@@ -122,16 +123,6 @@
       ],
       "/Users/NNS/Dropbox/Projects/book_a_doc/spec/features/program_feature_spec.rb": [
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         1,
         1,
@@ -144,6 +135,8 @@
         1,
         1,
         null,
+        null,
+        1,
         1,
         1,
         1,
@@ -215,6 +208,6 @@
         null
       ]
     },
-    "timestamp": 1479677055
+    "timestamp": 1479683554
   }
 }

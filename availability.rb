@@ -1,12 +1,10 @@
 #!/usr/bin/env ruby
-require 'dotenv'
-Dotenv.load
 require_relative 'lib/validations.rb'
 require_relative'lib/booking'
 require_relative 'lib/file_processor'
 
 time = ARGV.first
-path = ENV['FULL_PATH_TO_JSON']
+path = './lib/availability_slots.json'
 
 def run_program(time, path)
   validator = Validations.new(time)

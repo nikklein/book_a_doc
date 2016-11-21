@@ -1,5 +1,3 @@
-require 'dotenv'
-Dotenv.load
 require 'pp'
 require 'fakefs/safe'
 require 'fakefs/spec_helpers'

@@ -28,3 +28,5 @@ or alternatively, simply run the command below
 ```
 $ ruby ./availability.rb <preffered time>
 ```
+
+#### Requirements

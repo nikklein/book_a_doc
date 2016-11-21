@@ -1,7 +1,9 @@
+FULL_PATH_TO_PROGRAM = '../../availability.rb'.freeze
+
 describe 'Test program output' do
   it 'it prints an error if no command line argument has been provided' do
     setup_aruba
-    program_path = ENV['FULL_PATH_TO_PROGRAM']
+    program_path = FULL_PATH_TO_PROGRAM
     run "ruby #{program_path}"
 
     stop_all_commands
@@ -11,7 +13,7 @@ describe 'Test program output' do
   end
   it 'it prints an error if incorrect time format has been used during booking' do
     setup_aruba
-    program_path = ENV['FULL_PATH_TO_PROGRAM']
+    program_path = FULL_PATH_TO_PROGRAM
     wrong_time = 3333
     run "ruby #{program_path} #{wrong_time}"
 
@@ -22,7 +24,7 @@ describe 'Test program output' do
   end
   it 'it prints an error if preffered time is not between 08:00 and 15:00' do
     setup_aruba
-    program_path = ENV['FULL_PATH_TO_PROGRAM']
+    program_path = FULL_PATH_TO_PROGRAM
     run "ruby #{program_path} 04:00"
 
     stop_all_commands

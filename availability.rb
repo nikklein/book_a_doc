@@ -1,8 +1,8 @@
 require 'dotenv'
 Dotenv.load
-require_relative 'validations'
-require_relative 'booking'
-require_relative 'file_processor'
+require_relative 'lib/validations.rb'
+require_relative'lib/booking'
+require_relative 'lib/file_processor'
 
 time = ARGV.first
 path = ENV['FULL_PATH_TO_JSON']

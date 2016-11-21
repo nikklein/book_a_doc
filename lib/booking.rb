@@ -13,23 +13,13 @@ class Booking
 
     if find_time.nil?
       index = find_next_slot_index(slots)
-      slice = slots.slice!(index, 1)
-      puts format_for_print(slice[index]['time'])
-
+      puts format_for_print(slots[index]['time'])
+      slots.slice!(index, 1)
       update_file(available_slots)
     else
       puts format_for_print(slots[find_time]['time'])
       slots.slice!(find_time, 1)
       update_file(available_slots)
-    end
-  end
-
-  private
-
-  def check_next_index(time_slots)
-    if time_slots.last == @time
-      puts 'No times are currently available!'
-      exit
     end
   end
 
@@ -41,6 +31,12 @@ class Booking
     check_next_index(sorted)
     sorted.index @time
   end
+
+  def check_next_index(time_slots)
+    abort('No times are currently available!') if time_slots.last == @time
+  end
+
+  private
 
   def update_file(available_slots)
     @file_processor.write_to_file(available_slots)

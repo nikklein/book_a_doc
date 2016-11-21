@@ -7,17 +7,16 @@ class Booking
   def book_a_doc
     available_slots = @file_processor.to_hash
     slots = available_slots['availability_slots']
-    puts 'No times are available' if slots.empty?
-
+    slots_empty?(slots)
     find_time = slots.index slots.detect { |el| el['time'] == @time }
 
     if find_time.nil?
       index = find_next_slot_index(slots)
-      puts format_for_print(slots[index]['time'])
+      print_result(index, slots)
       slots.slice!(index, 1)
       update_file(available_slots)
     else
-      puts format_for_print(slots[find_time]['time'])
+      print_result(find_time, slots)
       slots.slice!(find_time, 1)
       update_file(available_slots)
     end
@@ -32,11 +31,19 @@ class Booking
     sorted.index @time
   end
 
+  def slots_empty?(slots)
+    abort('No times are available') if slots.empty?
+  end
+
   def check_next_index(time_slots)
     abort('No times are currently available!') if time_slots.last == @time
   end
 
   private
+
+  def print_result(index, slots)
+    puts format_for_print(slots[index]['time'])
+  end
 
   def update_file(available_slots)
     @file_processor.write_to_file(available_slots)

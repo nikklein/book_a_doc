@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 require 'dotenv'
 Dotenv.load
 require_relative 'lib/validations.rb'

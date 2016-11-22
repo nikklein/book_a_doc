@@ -1,4 +1,5 @@
 #!/usr/bin/env ruby
+
 require_relative 'lib/validations.rb'
 require_relative'lib/booking'
 require_relative 'lib/file_processor'

@@ -1,10 +1,10 @@
+require 'simplecov'
+SimpleCov.start
 require 'pp'
 require 'fakefs/safe'
 require 'fakefs/spec_helpers'
 require 'rspec/json_expectations'
 require 'aruba'
-require 'simplecov'
-SimpleCov.start
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

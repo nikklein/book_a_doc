@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-22T09:34:47+00:00">2016-11-22T09:34:47+00:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-11-26T19:16:38+00:00">2016-11-26T19:16:38+00:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">97.18%</span></span>
+    (<span class="covered_percent"><span class="green">100.0%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.58
+         2.08
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>7</b> files in total.
-    <b>142</b> relevant lines. 
-    <span class="green"><b>138</b> lines covered</span> and
-    <span class="red"><b>4</b> lines missed </span>
+    <b>119</b> relevant lines. 
+    <span class="green"><b>119</b> lines covered</span> and
+    <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#54a595830d8cd94013b9e69c8c6fec649937e19a" class="src_link" title="lib/booking.rb">lib/booking.rb</a></td>
-        <td class="yellow strong">89.19 %</td>
-        <td>59</td>
-        <td>37</td>
-        <td>33</td>
-        <td>4</td>
-        <td>2.6</td>
+        <td class="green strong">100.0 %</td>
+        <td>50</td>
+        <td>29</td>
+        <td>29</td>
+        <td>0</td>
+        <td>3.7</td>
       </tr>
       
       <tr>
@@ -67,17 +67,17 @@
         <td>13</td>
         <td>13</td>
         <td>0</td>
-        <td>2.4</td>
+        <td>4.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#e6c3b1ea776eed78a6688fc42fd2025c9a25f5cd" class="src_link" title="spec/booking_spec.rb">spec/booking_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>23</td>
-        <td>15</td>
-        <td>15</td>
         <td>0</td>
-        <td>1.0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0.0</td>
       </tr>
       
       <tr>
@@ -139,11 +139,11 @@
         <div class="source_table" id="54a595830d8cd94013b9e69c8c6fec649937e19a">
   <div class="header">
     <h3>lib/booking.rb</h3>
-    <h4><span class="yellow">89.19 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>37</b> relevant lines. 
-      <span class="green"><b>33</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <b>29</b> relevant lines. 
+      <span class="green"><b>29</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -162,14 +162,14 @@
           <code class="ruby">  def initialize(file_processor, time)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="3">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="3">
+          <span class="hits">2</span>
           
           <code class="ruby">    @time = format_time(time)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="4">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="4">
+          <span class="hits">2</span>
           
           <code class="ruby">    @file_processor = file_processor</code>
         </li>
@@ -195,91 +195,91 @@
         <li class="covered" data-hits="2" data-linenumber="8">
           <span class="hits">2</span>
           
-          <code class="ruby">    available_slots = @file_processor.to_hash</code>
+          <code class="ruby">    abort(&#39;No times are available&#39;) if slots.empty?</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">    slots = available_slots[&#39;availability_slots&#39;]</code>
+          <code class="ruby">    index = find_slot(available_slots)</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="10">
           <span class="hits">2</span>
           
-          <code class="ruby">    slots_empty?(slots)</code>
+          <code class="ruby">    abort(&#39;No times are currently available!&#39;) if index.nil?</code>
         </li>
       
-        <li class="covered" data-hits="42" data-linenumber="11">
-          <span class="hits">42</span>
+        <li class="covered" data-hits="2" data-linenumber="11">
+          <span class="hits">2</span>
           
-          <code class="ruby">    find_time = slots.index slots.detect { |el| el[&#39;time&#39;] == @time }</code>
+          <code class="ruby">    print_result(index, available_slots)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="2" data-linenumber="12">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    update_slots(index, available_slots)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def update_slots(find_slot, available_slots)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
-          <code class="ruby">    if find_time.nil?</code>
+          <code class="ruby">    available_slots = available_slots</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
-          
-          <code class="ruby">      index = find_next_slot_index(slots)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="15">
-          
-          
-          <code class="ruby">      print_result(index, slots)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="16">
-          
-          
-          <code class="ruby">      slots.slice!(index, 1)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="17">
-          
-          
-          <code class="ruby">      update_file(available_slots)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="18">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="19">
+        <li class="covered" data-hits="2" data-linenumber="17">
           <span class="hits">2</span>
           
-          <code class="ruby">      print_result(find_time, slots)</code>
+          <code class="ruby">    slots.slice!(find_slot, 1)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
+        <li class="covered" data-hits="2" data-linenumber="18">
           <span class="hits">2</span>
           
-          <code class="ruby">      slots.slice!(find_time, 1)</code>
+          <code class="ruby">    update_file(available_slots)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="21">
-          <span class="hits">2</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">      update_file(available_slots)</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="22">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def find_slot(_available_slots)</code>
+        </li>
+      
+        <li class="covered" data-hits="42" data-linenumber="22">
+          <span class="hits">42</span>
+          
+          <code class="ruby">    slots.index slots.detect { |el| el[&#39;time&#39;] == @time || el[&#39;time&#39;] &gt; @time }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -297,208 +297,154 @@
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">  def find_next_slot_index(slots)</code>
+          <code class="ruby">  private</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="26">
+        <li class="never" data-hits="" data-linenumber="26">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">    time_slots = []</code>
+          <code class="ruby">  def available_slots</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="27">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="16" data-linenumber="28">
+          <span class="hits">16</span>
           
-          <code class="ruby">    slots.each { |el| time_slots &lt;&lt; el[&#39;time&#39;] }</code>
+          <code class="ruby">    @file_processor.to_hash</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="28">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="29">
           
-          <code class="ruby">    time_slots &lt;&lt; @time</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="29">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="30">
           
-          <code class="ruby">    sorted = time_slots.sort</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="30">
-          <span class="hits">1</span>
           
-          <code class="ruby">    check_next_index(sorted)</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="31">
           <span class="hits">1</span>
           
-          <code class="ruby">    sorted.index @time</code>
+          <code class="ruby">  def slots</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="32">
+        <li class="covered" data-hits="10" data-linenumber="32">
+          <span class="hits">10</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    available_slots[&#39;availability_slots&#39;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def slots_empty?(slots)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="35">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    abort(&#39;No times are available&#39;) if slots.empty?</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="36">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="37">
+        <li class="never" data-hits="" data-linenumber="34">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
+        <li class="covered" data-hits="1" data-linenumber="35">
           <span class="hits">1</span>
           
-          <code class="ruby">  def check_next_index(time_slots)</code>
+          <code class="ruby">  def print_result(index, _slots)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="39">
-          <span class="hits">2</span>
-          
-          <code class="ruby">    abort(&#39;No times are currently available!&#39;) if time_slots.last == @time</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="40">
-          
-          
-          <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="41">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="42">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  private</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="43">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="44">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def print_result(index, slots)</code>
-        </li>
-      
-        <li class="covered" data-hits="2" data-linenumber="45">
+        <li class="covered" data-hits="2" data-linenumber="36">
           <span class="hits">2</span>
           
           <code class="ruby">    puts format_for_print(slots[index][&#39;time&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="46">
+        <li class="never" data-hits="" data-linenumber="37">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="never" data-hits="" data-linenumber="38">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
           <code class="ruby">  def update_file(available_slots)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
+        <li class="covered" data-hits="2" data-linenumber="40">
           <span class="hits">2</span>
           
           <code class="ruby">    @file_processor.write_to_file(available_slots)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="41">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="51">
+        <li class="never" data-hits="" data-linenumber="42">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="52">
+        <li class="covered" data-hits="1" data-linenumber="43">
           <span class="hits">1</span>
           
           <code class="ruby">  def format_time(time)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="53">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="2" data-linenumber="44">
+          <span class="hits">2</span>
           
-          <code class="ruby">    time[-1] == &#39;0&#39; ? @time = time &lt;&lt; &#39;:00&#39; : @time = time.split(&#39;:&#39;).first &lt;&lt; &#39;:&#39; &lt;&lt; ((time.split(&#39;:&#39;).last.to_i / 10.0).ceil * 10).to_s &lt;&lt; &#39;:00&#39;</code>
+          <code class="ruby">    @time = time &lt;&lt; &#39;:00&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="45">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="55">
+        <li class="never" data-hits="" data-linenumber="46">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="56">
+        <li class="covered" data-hits="1" data-linenumber="47">
           <span class="hits">1</span>
           
           <code class="ruby">  def format_for_print(time)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="57">
+        <li class="covered" data-hits="2" data-linenumber="48">
           <span class="hits">2</span>
           
           <code class="ruby">    time[0..-4]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="49">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="never" data-hits="" data-linenumber="50">
           
           
           <code class="ruby">end</code>
@@ -570,8 +516,8 @@
           <code class="ruby">  def load_file</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="9">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="20" data-linenumber="9">
+          <span class="hits">20</span>
           
           <code class="ruby">    File.read(@path)</code>
         </li>
@@ -594,8 +540,8 @@
           <code class="ruby">  def to_hash</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="13">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="17" data-linenumber="13">
+          <span class="hits">17</span>
           
           <code class="ruby">    JSON.parse(load_file)</code>
         </li>
@@ -681,8 +627,8 @@
     <h3>spec/booking_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>15</b> relevant lines. 
-      <span class="green"><b>15</b> lines covered</span> and
+      <b>0</b> relevant lines. 
+      <span class="green"><b>0</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -690,142 +636,142 @@
   <pre>
     <ol>
       
-        <li class="covered" data-hits="1" data-linenumber="1">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="1">
           
-          <code class="ruby">require &#39;./lib/booking&#39;</code>
+          
+          <code class="ruby"># require &#39;./lib/booking&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">#</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="3">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="3">
           
-          <code class="ruby">describe Booking do</code>
+          
+          <code class="ruby"># describe Booking do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">  describe &#39;#find_next_slot_index&#39; do</code>
+          
+          <code class="ruby">#   describe &#39;#find_next_slot_index&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="5">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="5">
           
-          <code class="ruby">    it &#39;finds an index of the next slot&#39; do</code>
+          
+          <code class="ruby">#     it &#39;finds an index of the next slot&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="6">
           
-          <code class="ruby">      anything = double(&#39;anything&#39;)</code>
+          
+          <code class="ruby">#       anything = double(&#39;anything&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="7">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="7">
           
-          <code class="ruby">      booking = Booking.new(anything, &#39;08:30&#39;)</code>
+          
+          <code class="ruby">#       booking = Booking.new(anything, &#39;08:30&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="8">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="8">
           
-          <code class="ruby">      slot = [{ &#39;time&#39; =&gt; &#39;08:40:00&#39; }]</code>
+          
+          <code class="ruby">#       slot = [{ &#39;time&#39; =&gt; &#39;08:40:00&#39; }]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="9">
           
-          <code class="ruby">      expect(booking.find_next_slot_index(slot)).to eq(0)</code>
+          
+          <code class="ruby">#       expect(booking.find_next_slot_index(slot)).to eq(0)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">#     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">#   end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="12">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="12">
           
-          <code class="ruby">  describe &#39;#check_next_index&#39; do</code>
+          
+          <code class="ruby">#   # describe &#39;#check_next_index&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">    it &#39;checks index of the next slot&#39; do</code>
+          
+          <code class="ruby">#   #   it &#39;checks index of the next slot&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="14">
           
-          <code class="ruby">      booking = Booking.new(&#39;/&#39;, &#39;08:30&#39;)</code>
+          
+          <code class="ruby">#   #     booking = Booking.new(&#39;/&#39;, &#39;08:30&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="15">
           
-          <code class="ruby">      time_slots = [&#39;08:30:00&#39;]</code>
+          
+          <code class="ruby">#   #     time_slots = [&#39;08:30:00&#39;]</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="16">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="16">
           
-          <code class="ruby">      begin</code>
+          
+          <code class="ruby">#   #     begin</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="17">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="17">
           
-          <code class="ruby">        booking.check_next_index(time_slots)</code>
+          
+          <code class="ruby">#   #       booking.check_next_index(time_slots)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
           
           
-          <code class="ruby">      rescue SystemExit =&gt; e</code>
+          <code class="ruby">#   #     rescue SystemExit =&gt; e</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="19">
           
-          <code class="ruby">        expect(e.status).to eq(1)</code>
+          
+          <code class="ruby">#   #       expect(e.status).to eq(1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="20">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">#   #     end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">#   #   end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="22">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">#   # end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby"># end</code>
         </li>
       
     </ol>
